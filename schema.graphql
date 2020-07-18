@@ -1,0 +1,393 @@
+"""
+A signed eight-byte integer. The upper big integer values are greater than the
+max value for a JavaScript number. Therefore all big integers will be output as
+strings and not numbers.
+"""
+scalar BigInt
+
+"""All input for the create `Organisation` mutation."""
+input CreateOrganisationInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """The `Organisation` to be created by this mutation."""
+  organisation: OrganisationInput!
+}
+
+"""The output of our create `Organisation` mutation."""
+type CreateOrganisationPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Organisation` that was created by this mutation."""
+  organisation: Organisation
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Organisation`. May be used by Relay 1."""
+  organisationEdge(
+    """The method to use when ordering `Organisation`."""
+    orderBy: [OrganisationsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): OrganisationsEdge
+}
+
+"""A location in a connection that can be used for resuming pagination."""
+scalar Cursor
+
+"""
+A point in time as described by the [ISO
+8601](https://en.wikipedia.org/wiki/ISO_8601) standard. May or may not include a timezone.
+"""
+scalar Datetime
+
+"""All input for the `deleteOrganisationById` mutation."""
+input DeleteOrganisationByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  id: BigInt!
+}
+
+"""All input for the `deleteOrganisation` mutation."""
+input DeleteOrganisationInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Organisation` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""The output of our delete `Organisation` mutation."""
+type DeleteOrganisationPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Organisation` that was deleted by this mutation."""
+  organisation: Organisation
+  deletedOrganisationId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Organisation`. May be used by Relay 1."""
+  organisationEdge(
+    """The method to use when ordering `Organisation`."""
+    orderBy: [OrganisationsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): OrganisationsEdge
+}
+
+"""
+The root mutation type which contains root level fields which mutate data.
+"""
+type Mutation {
+  """Creates a single `Organisation`."""
+  createOrganisation(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateOrganisationInput!
+  ): CreateOrganisationPayload
+
+  """
+  Updates a single `Organisation` using its globally unique id and a patch.
+  """
+  updateOrganisation(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateOrganisationInput!
+  ): UpdateOrganisationPayload
+
+  """Updates a single `Organisation` using a unique key and a patch."""
+  updateOrganisationById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: UpdateOrganisationByIdInput!
+  ): UpdateOrganisationPayload
+
+  """Deletes a single `Organisation` using its globally unique id."""
+  deleteOrganisation(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteOrganisationInput!
+  ): DeleteOrganisationPayload
+
+  """Deletes a single `Organisation` using a unique key."""
+  deleteOrganisationById(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: DeleteOrganisationByIdInput!
+  ): DeleteOrganisationPayload
+}
+
+"""An object with a globally unique `ID`."""
+interface Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+}
+
+type Organisation implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  contact: BigInt
+
+  """crm demo data +  template"""
+  dbSchema: String!
+  active: Boolean!
+  creationDate: Datetime
+  parentOrg: BigInt
+}
+
+"""
+A condition to be used against `Organisation` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input OrganisationCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `contact` field."""
+  contact: BigInt
+
+  """Checks for equality with the object’s `dbSchema` field."""
+  dbSchema: String
+
+  """Checks for equality with the object’s `active` field."""
+  active: Boolean
+
+  """Checks for equality with the object’s `creationDate` field."""
+  creationDate: Datetime
+
+  """Checks for equality with the object’s `parentOrg` field."""
+  parentOrg: BigInt
+}
+
+"""An input for mutations affecting `Organisation`"""
+input OrganisationInput {
+  id: BigInt
+  contact: BigInt
+
+  """crm demo data +  template"""
+  dbSchema: String
+  active: Boolean
+  creationDate: Datetime
+  parentOrg: BigInt
+}
+
+"""
+Represents an update to a `Organisation`. Fields that are set will be updated.
+"""
+input OrganisationPatch {
+  id: BigInt
+  contact: BigInt
+
+  """crm demo data +  template"""
+  dbSchema: String
+  active: Boolean
+  creationDate: Datetime
+  parentOrg: BigInt
+}
+
+"""A connection to a list of `Organisation` values."""
+type OrganisationsConnection {
+  """A list of `Organisation` objects."""
+  nodes: [Organisation]!
+
+  """
+  A list of edges which contains the `Organisation` and cursor to aid in pagination.
+  """
+  edges: [OrganisationsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Organisation` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Organisation` edge in the connection."""
+type OrganisationsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Organisation` at the end of the edge."""
+  node: Organisation
+}
+
+"""Methods to use when ordering `Organisation`."""
+enum OrganisationsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  CONTACT_ASC
+  CONTACT_DESC
+  DB_SCHEMA_ASC
+  DB_SCHEMA_DESC
+  ACTIVE_ASC
+  ACTIVE_DESC
+  CREATION_DATE_ASC
+  CREATION_DATE_DESC
+  PARENT_ORG_ASC
+  PARENT_ORG_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: Cursor
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: Cursor
+}
+
+"""The root query type which gives access points into the data universe."""
+type Query implements Node {
+  """
+  Exposes the root query type nested one level down. This is helpful for Relay 1
+  which can only query top level fields if they are in a particular form.
+  """
+  query: Query!
+
+  """
+  The root query type must be a `Node` to work well with Relay 1 mutations. This just resolves to `query`.
+  """
+  nodeId: ID!
+
+  """Fetches an object given its globally unique `ID`."""
+  node(
+    """The globally unique `ID`."""
+    nodeId: ID!
+  ): Node
+
+  """Reads and enables pagination through a set of `Organisation`."""
+  allOrganisations(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Organisation`."""
+    orderBy: [OrganisationsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: OrganisationCondition
+  ): OrganisationsConnection
+  organisationById(id: BigInt!): Organisation
+
+  """Reads a single `Organisation` using its globally unique `ID`."""
+  organisation(
+    """
+    The globally unique `ID` to be used in selecting a single `Organisation`.
+    """
+    nodeId: ID!
+  ): Organisation
+}
+
+"""All input for the `updateOrganisationById` mutation."""
+input UpdateOrganisationByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Organisation` being updated.
+  """
+  organisationPatch: OrganisationPatch!
+  id: BigInt!
+}
+
+"""All input for the `updateOrganisation` mutation."""
+input UpdateOrganisationInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Organisation` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Organisation` being updated.
+  """
+  organisationPatch: OrganisationPatch!
+}
+
+"""The output of our update `Organisation` mutation."""
+type UpdateOrganisationPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """The `Organisation` that was updated by this mutation."""
+  organisation: Organisation
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Organisation`. May be used by Relay 1."""
+  organisationEdge(
+    """The method to use when ordering `Organisation`."""
+    orderBy: [OrganisationsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): OrganisationsEdge
+}

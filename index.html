@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+    <base href="/">
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
+    
+    
+      <link rel="stylesheet" href="https://cdn.heg-cp.com/bootstrap@4.3.1/dist/css/bootstrap-reboot.min.css">
+    
+    <style>@-webkit-keyframes loader-gradient{from{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 90%,#ccc 100%)}to{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 90%,#ccc 100%);-webkit-transform:rotate(720deg) transform:rotate(720deg)}1%,99%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 89%,#ccc 100%)}2%,98%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 88%,#ccc 100%)}3%,97%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 87%,#ccc 100%)}4%,96%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 86%,#ccc 100%)}5%,95%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 85%,#ccc 100%)}10%,90%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 80%,#ccc 100%)}20%,80%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 70%,#ccc 100%)}30%,70%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 60%,#ccc 100%)}40%,60%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 50%,#ccc 100%)}50%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 10%,#ccc 100%)}}@keyframes loader-gradient{from{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 90%,#ccc 100%)}to{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 90%,#ccc 100%);-ms-transform:rotate(720deg);-webkit-transform:rotate(720deg);transform:rotate(720deg)}1%,99%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 89%,#ccc 100%)}2%,98%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 88%,#ccc 100%)}3%,97%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 87%,#ccc 100%)}4%,96%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 86%,#ccc 100%)}5%,95%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 85%,#ccc 100%)}10%,90%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 80%,#ccc 100%)}20%,80%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 70%,#ccc 100%)}30%,70%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 60%,#ccc 100%)}40%,60%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 50%,#ccc 100%)}50%{background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 10%,#ccc 100%)}}@-webkit-keyframes loader-rotate{to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes loader-rotate{to{-ms-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes loader-collapse{to{-webkit-transform:scale(0);transform:scale(0);opacity:0}}@keyframes loader-collapse{to{-ms-transform:scale(0);transform:scale(0);opacity:0}}@-webkit-keyframes loader-spinner-fade-in{to{opacity:1}}@keyframes loader-spinner-fade-in{to{opacity:1}}@-webkit-keyframes loader-fade-in{0%{opacity:.1}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}@keyframes loader-fade-in{0%{opacity:.1}100%{opacity:1;-ms-transform:scale(1);transform:scale(1)}}.page-loader{position:fixed;z-index:100;top:0;left:0;right:0;bottom:0;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-align:center;-webkit-align-items:center;-webkit-box-align:center;align-items:center;-webkit-justify-content:center;justify-content:center;background-color:#f7f7f7;text-align:center;pointer-events:none}.page-loader__inner{min-width:200px;position:relative;opacity:0;transform:scale(0.9);-webkit-animation:loader-fade-in .3s ease-in-out forwards;animation:loader-fade-in .3s ease-in-out forwards;-webkit-animation-delay:1s;animation-delay:1s}.page-loader__icon{width:80px;height:80px;margin:auto;position:relative;border-radius:40px;border:1px solid #ccc;background-color:#fff}.page-loader__icon>svg,.page-loader__icon>img{width:100%;max-width:64px;max-height:50px;fill:#999 !important;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transition:fill 2s ease-in-out .4s}.page-loader__icon>svg *{fill:#999 !important}.page-loader__spinner{position:absolute;margin:auto;top:0;bottom:0;left:0;right:0;width:104px;height:104px;opacity:0;-webkit-animation:.6s ease .4s 1 forwards loader-spinner-fade-in;animation:.6s ease .4s 1 forwards loader-spinner-fade-in}.page-loader .spinner{opacity:1;transition:1s ease-in-out opacity;position:absolute;width:104px;height:104px;border-radius:50%;background-image:linear-gradient(to top,#f7f7f7 0,#f7f7f7 90%,#ccc 100%);-webkit-animation:1.4s ease-out .8s infinite forwards loader-gradient;animation:1.4s ease-out .8s infinite forwards loader-gradient}.page-loader .spinner--brand{opacity:0}.page-loader .spinner__mask{position:absolute;background:#f7f7f7;top:2px;left:2px;bottom:2px;right:2px;border-radius:50%}</style>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,Intl,Promise,Array.from,Array.prototype.@@iterator,String.fromCodePoint,Number.isInteger,performance.now,navigator.sendBeacon,Symbol,Symbol.toStringTag,String.prototype.startsWith"></script>
+    
+          <link rel="icon" href="data:;base64,=">
+
+          <link rel="preconnect" href="https://www.google-analytics.com">
+          <link rel="preconnect" href="https://tags.tiqcdn.com">
+          <link rel="preconnect" href="https://img1.wsimg.com">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://green.lexicon.api.heg-cp.com">
+          <link rel="preconnect" href="https://paintbrush.heg-cp.com">
+          <link rel="preconnect" href="https://images-static.trustpilot.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com">
+          <script src="https://static-artifact.heg-cp.com/rum/rumBeacon-v1.0.min.js"></script>
+          <script>
+          (function() {
+            var cradleUrl = '/api/cradle/log';
+            var _fetch = window.fetch;
+            window.fetch = function() {
+              var start = performance.now();
+              var args = Array.prototype.slice.call(arguments);
+              return _fetch.apply(null, args).then(function(response) {
+                if (response.ok) {
+                  return response;
+                }
+          
+                try {
+                  var url = response.url;
+                  var status = response.status;
+                  var duration = performance.now() - start;
+                  var poweredBy = response.headers.get('X-Powered-By');
+                  var xray = args[1] && args[1].headers && args[1].headers['X-Ray-Id'];
+                  var attempt = args[1] && args[1].headers && args[1].headers['X-Attempt'];
+                  
+                  var beacon = {
+                    level: 'critical',
+                    code: status,
+                    url: window.location.origin + window.location.pathname,
+                    msg: JSON.stringify({
+                      url: url,
+                      status: status,
+                      xray: xray,
+                      duration: duration,
+                      poweredBy: poweredBy,
+                      attempt: attempt,
+                      referrer: document.referrer,
+                    })
+                  };
+          
+                  window.navigator.sendBeacon(cradleUrl, JSON.stringify(beacon));
+                } catch (e) {
+                  // fail silently
+                  console.error(e);
+                }
+          
+                return response;
+              });
+            };
+          }())
+        </script>
+        
+    
+      <script>
+        (function() {
+          var url = '/api/hug/api/v1/bootstrap';
+          var query = {"brandPilot[apps][0]":"brand","brandPilot[apps][1]":"usf","brandPilot[apps][2]":"bks","lexicon[scopes][0]":"brand","lexicon[scopes][1]":"usf","lexicon[scopes][2]":"bks","lexicon[scopes][3]":"cookie","lexicon[scopes][4]":"dst","lexicon[scopes][5]":"ux","lexicon[scopes][6]":"country"};
+          query.referrer = document.referrer;
+          query.url = window.location.href;
+          query = Object.keys(query).reduce(function(acc, key) {
+            return acc.concat(key.replace(/\[\d\]/, '[]') + '=' + encodeURIComponent(query[key]));
+          }, []).join('&');
+          url = url + '?' + query;
+          window.hugPromise = window.fetch(url)
+            .then(function(response) {
+              return response.json();
+            })
+            .then(function(data) {
+              window.hugBootstrap = data;
+            });
+        })();
+      </script>
+    
+  <link href="/static/11.ae056e0373fea329ebb5.chunk.js" rel="prefetch"><link href="/static/16.320e2009e4408266d5e9.chunk.js" rel="prefetch"><link href="/static/3.5b7d89a11f32b9bf528c.chunk.js" rel="prefetch"><link href="/static/5.b551595a483acfb98b69.chunk.js" rel="prefetch"><link href="/static/6.8360815a21b9eaf9c99e.chunk.js" rel="prefetch"><link href="/static/7.7ff005614516c1462ef7.chunk.js" rel="prefetch"><link href="/static/8.e29cf5f9dcda7b789573.chunk.js" rel="prefetch"><link href="/static/9.5986ad88059f1775ae2c.chunk.js" rel="prefetch"></head>
+  <body>
+    <div id="root"></div>
+    <div class="page-loader"><div class="page-loader__inner"><div class="page-loader__spinner"><div class="spinner"><div class="spinner__mask"></div></div><div class="spinner spinner--brand"><div class="spinner__mask"></div></div><div class="spinner spinner--branded-circle"><div class="spinner__mask"></div></div></div><div class="page-loader__icon"><img id="page-loader-image" data-src="/logos/brand-light"></div></div></div>
+    <script>
+      var utag_data = {"order_id":"","order_total":"","order_total_usd":"","order_total_eur":"","order_subtotal":"","order_shipping":"","order_currency":"","pl_msn_conv":"","pl_id":"","page_type":"","new_customer":"","product_count":"","source_code":"","app_name":"","order_from_website":"","pl_ga_account_id":"","shopper_id":"","cvo_event":"","product_id":"","product_name":"","product_quantity":"","product_price_usd":"","customer_country":"","order_total_new":"","order_total_new_usd":"","page_url":"","oc_customer_type":"","product_category_name":"","product_price":"","oc_product_vertical":"","session_id":"","tmskey":"","marin_trans":"","marin_trans_order":"","marin_trans_new":"","new_prod":"","renew_prod":"","marin_trans_renewal":"","order_total_renewal":"","_pm_AdvertisingText":"","_pm_AnalyticsText":"","_pm_SocialText":"","_pm_CategoryName_Advertising":"","_pm_CategoryName_Analytics":"","_pm_CategoryName_Support":"","_pm_SupportText":"","_pm_default":"","optx_type":"","pl_wp":"","page.financeCategory":"","page.name":"","page.productCategory":"","page.productSubCategory":"","page.siteSection":"","page.siteSubSection":"","page.type":"","page.url":"","site.countryCode":"","site.environment":"","site.id":"","site.language":"","basket.checkoutSavings":"","basket.currency":"","basket.id":"","basket.noOfProducts":"","basket.products":"","basket.subTotal":"","basket.tax":"","basket.total":"","basket.voucher":"","basket.products.category":"","basket.products.extension_id":"","basket.products.id":"","basket.prodcuts.name":"","basket.products.numOfMonths":"","basket.products.price":"","basket.products.quantity":"","basket.products.sale_price":"","basket.products.subCategory":"","user.existingCustomer":"","user.id":"","user.loginState":"","transaction.checkoutSavings":"","transaction.currency":"","transaction.id":"","transaction.noOfProducts":"","transaction.paymentType":"","transaction.products":"","transaction.subTotal":"","transaction.tax":"","transaction.total":"","transaction.voucher":"","live_engage_auth":"prod"}
+    </script>
+    
+          <script>
+            setTimeout(function() {
+              var el = document.getElementById('page-loader-image');
+              if (el != null) {
+                el.src = el.dataset.src;
+              }
+            }, 20);
+          </script>
+        
+  <script type="text/javascript" src="/cradleError.js" crossorigin="anonymous"></script><script type="text/javascript" src="/static/runtime.cf1f270bc154c1f8ad19.bundle.js" crossorigin="anonymous"></script><script type="text/javascript" src="/static/31.79d49675198bab1787cf.chunk.js" crossorigin="anonymous"></script><script type="text/javascript" src="/static/14.44ca723aa2032cf4cd0d.chunk.js" crossorigin="anonymous"></script><script type="text/javascript" src="/static/13.156d49de8c9fd4642c61.chunk.js" crossorigin="anonymous"></script><script type="text/javascript" src="/static/12.9c0803be3f187ec21302.chunk.js" crossorigin="anonymous"></script><script type="text/javascript" src="/static/10.90799cd808142945099b.chunk.js" crossorigin="anonymous"></script></body>
+</html>
